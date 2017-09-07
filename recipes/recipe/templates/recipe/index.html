@@ -1,1 +1,11 @@
-Hello, world
+{% if recipes %}
+    <ul>
+    {% for recipe in recipes %}
+        <li>{{ recipe.name }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No recipes are available.</p>
+{% endif %}
+<br />
+<a href=./submit>Submit a recipe</a>&nbsp;&nbsp;

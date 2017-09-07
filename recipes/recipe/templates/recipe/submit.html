@@ -1,0 +1,13 @@
+<h1>Add Recipe</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'recipe:submit' %}" method="post">
+{% csrf_token %}
+    Name :        <input type="text" name="name" id="name"/><br>
+    Ingredients : <input type="text" name="ingredients" id="ingredients" /><br>
+    Calories :    <input type="text" name="calories" id="calories" /><br>
+    Time needed (in minutes) : <input type="text" name="prep_time" id="prep_time" /><br>
+ 
+<input type="submit" value="Submit" />
+</form>
